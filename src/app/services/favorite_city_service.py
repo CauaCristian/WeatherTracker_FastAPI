@@ -8,9 +8,9 @@ class FavoriteCityService:
         self.favorite_city_repository = FavoriteCityRepository()
         self.open_weather_map_service = OpenWeatherMapService()
 
-    def add_favorite_city(self, favorite_city: FavoriteCityCreate) -> FavoriteCityResponse:
+    async def add_favorite_city(self, favorite_city: FavoriteCityCreate) -> FavoriteCityResponse:
         try:
-            info = self.open_weather_map_service.get_city_coordinates(favorite_city.city_name)
+            info = await self.open_weather_map_service.get_city_coordinates(favorite_city.city_name)
             new_favorite_city = FavoriteCityModel(
                 user_id=favorite_city.user_id,
                 city_name=favorite_city.city_name,

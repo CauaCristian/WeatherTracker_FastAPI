@@ -7,4 +7,4 @@ favorite_city_service = FavoriteCityService()
 
 @favorite_city_router.post("/add_favorite-city", status_code=201)
 async def add_favorite_city(city: FavoriteCityCreate):
-    return favorite_city_service.add_favorite_city(city)
+    return await favorite_city_service.add_favorite_city(city)
