@@ -1,7 +1,7 @@
 from src.core.database.postgres import base
 from sqlalchemy import Column, Integer, String, Float, DateTime
 from datetime import datetime, timezone
-class WeatherHistoryModel(base)
+class WeatherHistoryModel(base):
     __tablename__ = 'weather_histories'
     id = Column(Integer, primary_key=True, index=True, nullable=False)
     city_name= Column(String, nullable=False)
