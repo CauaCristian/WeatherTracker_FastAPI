@@ -15,9 +15,9 @@ class WeatherHistoryModel(base):
     temperature_max= Column(Float, nullable=False)
     temperature_min= Column(Float, nullable=False)
     wind_speed = Column(Float, nullable=False)
-    datetime = Column(DateTime, nullable=False)
+    recorded_at = Column(DateTime, nullable=False)
 
-    def __init__(self, city_name, country, lat, lon, weather, humidity, temperature, temperature_feels_like, temperature_max, temperature_min, wind_speed, local_datetime = datetime.now(timezone.utc)):
+    def __init__(self, city_name, country, lat, lon, weather, humidity, temperature, temperature_feels_like, temperature_max, temperature_min, wind_speed, recorded_at = datetime.now(timezone.utc)):
         self.city_name = city_name
         self.country = country
         self.lat = lat
@@ -29,4 +29,4 @@ class WeatherHistoryModel(base):
         self.temperature_max = temperature_max
         self.temperature_min = temperature_min
         self.wind_speed = wind_speed
-        self.datetime = local_datetime
+        self.recorded_at = recorded_at

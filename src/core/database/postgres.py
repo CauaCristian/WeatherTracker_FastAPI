@@ -12,5 +12,5 @@ class PostgresDatabase:
         self.engine = create_engine(os.getenv("POSTGRES_URL"))
         self.session = sessionmaker(autoflush=False, autocommit= False,bind=self.engine)
 
-    def get_session(self) -> sessionmaker:
+    def get_session(self):
         return self.session()

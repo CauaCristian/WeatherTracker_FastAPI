@@ -13,7 +13,6 @@ class WeatherHistoryCreate(BaseModel):
     temperature_max: float
     temperature_min: float
     wind_speed: float
-    datetime: datetime.now(timezone.utc)
 
 class WeatherResponse(BaseModel):
     id: int
@@ -28,5 +27,5 @@ class WeatherResponse(BaseModel):
     temperature_max: float
     temperature_min: float
     wind_speed: float
-    datetime: datetime.now(timezone.utc)
+    recorded_at: datetime
     model_config = {"from_attributes": True}

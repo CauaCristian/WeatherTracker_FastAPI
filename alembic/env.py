@@ -26,6 +26,7 @@ if config.config_file_name is not None:
 from src.core.database.postgres import base
 from src.app.models.user_model import UserModel
 from src.app.models.favorite_city_model import FavoriteCityModel
+from src.app.models.weather_history_model import WeatherHistoryModel
 target_metadata = base.metadata
 
 # other values from the config, defined by the needs of env.py,
